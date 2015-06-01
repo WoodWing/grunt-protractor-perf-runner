@@ -1,23 +1,26 @@
 {
-  "name": "grunt-protractor-runner",
-  "description": "A Grunt plugin for running protractor runner.",
+  "name": "grunt-protractor-perf-runner",
+  "description": "A Grunt plugin for running protractor-perf runner.",
   "version": "2.0.0",
-  "homepage": "https://github.com/teerapap/grunt-protractor-runner",
+  "homepage": "https://github.com/pstanic/grunt-protractor-perf-runner",
   "author": {
     "name": "Teerapap Changwichukarn",
     "email": "teerapap.c@gmail.com"
   },
+  "contributors": [{
+    "name": "Predrag Stanic"
+  }],
   "repository": {
     "type": "git",
-    "url": "git://github.com/teerapap/grunt-protractor-runner.git"
+    "url": "git://github.com/pstanic/grunt-protractor-perf-runner.git"
   },
   "bugs": {
-    "url": "https://github.com/teerapap/grunt-protractor-runner/issues"
+    "url": "https://github.com/pstanic/grunt-protractor-perf-runner/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/teerapap/grunt-protractor-runner/blob/master/LICENSE-MIT"
+      "url": "https://github.com/pstanic/grunt-protractor-perf-runner/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",

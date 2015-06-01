@@ -1,9 +1,11 @@
 /*
- * grunt-protractor-runner
+ * grunt-protractor-perf-runner
  * https://github.com/teerapap/grunt-protractor-runner
  *
  * Copyright (c) 2013 Teerapap Changwichukarn
  * Licensed under the MIT license.
+ *
+ * Changed to protractor perf by Predrag Stanic.
  */
 
 'use strict';
@@ -16,14 +18,16 @@ var through2 = require('through2');
 
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('protractor', 'A grunt task to run protractor.', function() {
+  grunt.registerMultiTask('protractorPerf', 'A grunt task to run protractor-perf.', function() {
 
     // '.../node_modules/protractor/lib/protractor.js'
     var protractorMainPath = require.resolve('protractor');
-    // '.../node_modules/protractor/bin/protractor'
-    var protractorBinPath = path.resolve(protractorMainPath, '../../bin/protractor');
     // '.../node_modules/protractor/referenceConf.js'
     var protractorRefConfPath = path.resolve(protractorMainPath, '../../referenceConf.js');
+    // '.../node_modules/protractor-perf/lib/index.js'
+    var protractorPerfMainPath = require.resolve('protractor-perf');
+    // '.../node_modules/protractor-perf/lib/cli.js'
+    var protractorPerfBinPath = path.resolve(protractorPerfMainPath, '../cli.js');
 
     // Merge task-specific and/or target-specific options with these defaults.
     var opts = this.options({
@@ -49,7 +53,7 @@ module.exports = function(grunt) {
     var boolArgs = ["includeStackTrace", "verbose"];
     var objectArgs = ["params", "capabilities", "cucumberOpts", "mochaOpts"];
 
-    var args = process.execArgv.concat([protractorBinPath, opts.configFile]);
+    var args = process.execArgv.concat([protractorPerfBinPath, opts.configFile]);
     if (opts.noColor){
       args.push('--no-jasmineNodeOpts.showColors');
     }
